@@ -11,6 +11,11 @@ dependencies = [
     "mem0ai==0.1.74"
 ]
 
+[project.optional-dependencies]
+dev = [
+    "ruff==0.11.2"
+]
+
 [project.urls]
 Repository = "https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory"
 Documentation = "https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/blob/main/README.md"
