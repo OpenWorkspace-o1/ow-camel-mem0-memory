@@ -1,0 +1,8 @@
+[project]
+name = "openworkspace-o1-camel-mem0"
+version = "0.0.1"
+description = "Mem0 memory layer for CamelAI Agents."
+authors = [{ name = "OpenWorkspace-o1" }]
+requires-python = ">=3.10,<3.13"
+readme = "README.md"
+license = "Apache-2.0"
