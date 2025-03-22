@@ -23,7 +23,6 @@ pip install openworkspace-o1-camel-mem0
 Here's a basic example of how to use the Mem0 storage with CamelAI:
 
 ```python
-from mem0 import Memory
 from ow-camel-mem0-memory.mem0 import Mem0Storage
 
 # Configure Mem0 storage
