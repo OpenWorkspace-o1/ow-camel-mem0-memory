@@ -6,3 +6,21 @@ authors = [{ name = "OpenWorkspace-o1" }]
 requires-python = ">=3.10,<3.13"
 readme = "README.md"
 license = "Apache-2.0"
+dependencies = [
+    "camel-ai==0.2.36",
+    "mem0ai==0.1.74"
+]
+
+[project.urls]
+Repository = "https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory"
+Documentation = "https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/blob/main/README.md"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ow-camel-mem0-memory"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
