@@ -22,6 +22,7 @@ from camel.memories.records import MemoryRecord
 from camel.messages import BaseMessage
 from camel.storages.key_value_storages import BaseKeyValueStorage
 from camel.types import OpenAIBackendRole, RoleType
+from mem0 import Memory
 
 logger = logging.getLogger(__name__)
 
@@ -48,27 +49,11 @@ class Mem0Storage(BaseKeyValueStorage):
     def __init__(
         self,
         agent_id: str,
-        api_key: Optional[str] = None,
+        config_dict: Dict[str, Any],
         user_id: Optional[str] = None,
         metadata: Optional[Dict[str, Any]] = None,
     ) -> None:
-        try:
-            from mem0 import MemoryClient
-        except ImportError as exc:
-            logger.error(
-                "Please install `mem0` first. You can install it by "
-                "running `pip install mem0ai`."
-            )
-            raise exc
-
-        self.api_key = api_key or os.getenv("MEM0_API_KEY")
-        if not self.api_key:
-            raise ValueError(
-                "API key must be provided either through constructor "
-                "or MEM0_API_KEY environment variable."
-            )
-
-        self.client = MemoryClient(api_key=self.api_key)
+        self.memory = Memory.from_config(config_dict)
         self.agent_id = agent_id
         self.user_id = user_id
         self.metadata = metadata or {}
@@ -165,7 +150,7 @@ class Mem0Storage(BaseKeyValueStorage):
                 user_id=self.user_id,
                 metadata=self.metadata,
             )
-            self.client.add(messages, **options)
+            self.memory.add(messages, **options)
         except Exception as e:
             logger.error(f"Error adding memory: {e}")
             logger.error(f"Error: {e}")
@@ -182,7 +167,7 @@ class Mem0Storage(BaseKeyValueStorage):
                 agent_id=self.agent_id,
                 user_id=self.user_id,
             )
-            results = self.client.get_all(version="v2", **filters)
+            results = self.memory.get_all(**filters)
 
             # Transform results into MemoryRecord objects
             transformed_results = []
@@ -218,7 +203,7 @@ class Mem0Storage(BaseKeyValueStorage):
                 agent_id=self.agent_id,
                 user_id=self.user_id,
             )
-            self.client.delete_users(**filters)
+            self.memory.delete_all(**filters)
         except Exception as e:
             logger.error(f"Error deleting memories: {e}")
             logger.error(f"Error: {e}")
