@@ -1,6 +1,6 @@
 [project]
 name = "openworkspace-o1-camel-mem0"
-version = "0.0.1"
+version = "0.0.2"
 description = "Mem0 memory layer for CamelAI Agents."
 authors = [{ name = "OpenWorkspace-o1" }]
 requires-python = ">=3.10,<3.13"
