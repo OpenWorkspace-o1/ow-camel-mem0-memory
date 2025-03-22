@@ -33,14 +33,14 @@ class Mem0Storage(BaseKeyValueStorage):
     search, and manage text with context.
 
     Args:
+        config_dict (Dict[str, Any]): The configuration dictionary for Mem0.
         agent_id (str): Default agent ID to associate memories with.
-        api_key (str, optional): The API key for authentication. If not
-            provided, will try to get from environment variable MEM0_API_KEY
-            (default: :obj:`None`).
         user_id (str, optional): Default user ID to associate memories with
             (default: :obj:`None`).
         metadata (Dict[str, Any], optional): Default metadata to include with
             all memories (default: :obj:`None`).
+        limit (int, optional): The maximum number of memories to return
+            (default: :obj:`100`).
 
     References:
         https://docs.mem0.ai
@@ -48,15 +48,17 @@ class Mem0Storage(BaseKeyValueStorage):
 
     def __init__(
         self,
-        agent_id: str,
         config_dict: Dict[str, Any],
+        agent_id: str,
         user_id: Optional[str] = None,
         metadata: Optional[Dict[str, Any]] = None,
+        limit: int = 100,
     ) -> None:
         self.memory = Memory.from_config(config_dict)
         self.agent_id = agent_id
         self.user_id = user_id
         self.metadata = metadata or {}
+        self.limit = limit
 
     def _prepare_options(
         self,
@@ -167,7 +169,7 @@ class Mem0Storage(BaseKeyValueStorage):
                 agent_id=self.agent_id,
                 user_id=self.user_id,
             )
-            results = self.memory.get_all(**filters)
+            results = self.memory.get_all(**filters, limit=self.limit)
 
             # Transform results into MemoryRecord objects
             transformed_results = []
