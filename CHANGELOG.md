@@ -1,3 +1,9 @@
+## [2025-03-23] [PR#20](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/20)
+
+### Updated
+- Updated package installation command in `README.md` from `openworkspace-o1-camel-mem0` to `ow-camel-mem0-memory`.
+- Fixed a typo in the documentation link text from "Read me" to "Read more".
+
 ## [2025-03-23] [PR#18](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/18)
 
 ### Added
