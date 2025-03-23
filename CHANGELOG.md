@@ -1,3 +1,14 @@
+## [2025-03-23] [PR#12](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/12)
+
+### Added
+- Added detailed configuration examples for `pgvector` and `openai` embedder in `README.md`.
+- Added `sqlalchemy` and `psycopg2-binary` dependencies in `pyproject.toml`.
+
+### Updated
+- Updated project name from `openworkspace-o1-camel-mem0` to `ow-camel-mem0-memory` in `pyproject.toml`.
+- Bumped version to `0.0.3` in `pyproject.toml`.
+- Updated `README.md` with links to external documentation for vector stores and embedders.
+
 ## [2025-03-22] [PR#8](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/8)
 
 ### Added
