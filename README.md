@@ -64,6 +64,7 @@ Read more examples at [here](https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06
 
 ### Configure embedder
 
+```bash
 config = {
     "embedder": {
         "provider": "openai",
@@ -73,11 +74,13 @@ config = {
         }
     }
 }
+```
 
 Read more examples at [here](https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/embedders)
 
 ### Full configuration
 
+```bash
 config = {
     "vector_store": {
         "provider": "pgvector",
@@ -101,6 +104,7 @@ config = {
         }
     }
 }
+```
 
 ## Features
 

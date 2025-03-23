@@ -1,3 +1,12 @@
+## [2025-03-23] [PR#14](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/14)
+
+### Added
+- Added `MULTI-TENANT-STRATEGY.md` to document multi-tenant naming conventions.
+
+### Updated
+- Updated `README.md` with proper code block formatting for configuration examples.
+- Updated `pyproject.toml` dependencies to use `>=` for `camel-ai` and `mem0ai` versions.
+
 ## [2025-03-23] [PR#12](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/12)
 
 ### Added
