@@ -126,7 +126,7 @@ config = {
 }
 ```
 
-Read me at [here](https://github.com/mem0ai/mem0/blob/e4307ae42009e8e2a9dd66ca7ac74ff263bfcc54/docs/open-source/python-quickstart.mdx#L77)
+Read more at [here](https://github.com/mem0ai/mem0/blob/e4307ae42009e8e2a9dd66ca7ac74ff263bfcc54/docs/open-source/python-quickstart.mdx#L77)
 
 ### Full configuration
 
