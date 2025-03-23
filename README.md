@@ -78,6 +78,56 @@ config = {
 
 Read more examples at [here](https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/embedders)
 
+### Configure LLM
+
+```bash
+config = {
+    "llm": {
+        "provider": "anthropic",
+        "config": {
+            "model": "claude-3-7-sonnet-latest",
+            "temperature": 0.2,
+            "max_tokens": 32768,
+        }
+    }
+}
+```
+
+Read more at [here](https://github.com/mem0ai/mem0/blob/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/llms/config.mdx)
+
+### Configure Graph Store
+
+```bash
+config = {
+    "graph_store": {
+        "provider": "neo4j",
+        "config": {
+            "url": "neo4j+s://---",
+            "username": "neo4j",
+            "password": "---"
+        }
+    }
+}
+```
+
+Or with custom prompt
+
+```bash
+config = {
+    "graph_store": {
+        "provider": "neo4j",
+        "config": {
+            "url": "neo4j+s://xxx",
+            "username": "neo4j",
+            "password": "xxx"
+        },
+        "custom_prompt": "Please only extract entities containing sports related relationships and nothing else.",
+    }
+}
+```
+
+Read me at [here](https://github.com/mem0ai/mem0/blob/e4307ae42009e8e2a9dd66ca7ac74ff263bfcc54/docs/open-source/python-quickstart.mdx#L77)
+
 ### Full configuration
 
 ```bash
@@ -101,6 +151,22 @@ config = {
         "config": {
             "model": "text-embedding-3-large",
             "embedding_dims": 1536
+        }
+    },
+    "llm": {
+        "provider": "anthropic",
+        "config": {
+            "model": "claude-3-7-sonnet-latest",
+            "temperature": 0.2,
+            "max_tokens": 32768,
+        }
+    },
+    "graph_store": {
+        "provider": "neo4j",
+        "config": {
+            "url": "neo4j+s://---",
+            "username": "neo4j",
+            "password": "---"
         }
     }
 }

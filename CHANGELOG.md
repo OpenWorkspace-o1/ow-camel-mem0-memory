@@ -1,3 +1,9 @@
+## [2025-03-23] [PR#18](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/18)
+
+### Added
+- Added documentation for configuring `llm` with `anthropic` provider and `graph_store` with `neo4j` in `README.md`.
+- Added full configuration example including `llm` and `graph_store` settings.
+
 ## [2025-03-23] [PR#14](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/14)
 
 ### Added
