@@ -30,10 +30,15 @@ config = {
     "vector_store": {
         "provider": "pgvector",
         "config": {
+            "dbname": "postgres",
             "user": "test",
             "password": "123",
             "host": "127.0.0.1",
             "port": "5432",
+            "collection_name": "mem0",
+            "embedding_model_dims": 1536,
+            "diskann": True,
+            "hnsw": False
         }
     }
 }
