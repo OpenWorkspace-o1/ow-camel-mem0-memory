@@ -25,7 +25,7 @@ Here's a basic example of how to use the Mem0 storage with CamelAI:
 ```python
 from ow-camel-mem0-memory import Mem0Storage
 
-# Configure Mem0 storage
+# Configure Mem0 storage, read more at: https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/vectordbs
 config = {
     "vector_store": {
         "provider": "pgvector",
