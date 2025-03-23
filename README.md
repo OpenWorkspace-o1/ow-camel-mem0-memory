@@ -15,7 +15,7 @@ This package implements a Mem0-based storage backend for CamelAI agents, allowin
 ## Installation
 
 ```bash
-pip install openworkspace-o1-camel-mem0
+pip install ow-camel-mem0-memory
 ```
 
 ## Usage
