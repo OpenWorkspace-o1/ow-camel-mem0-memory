@@ -1,9 +1,11 @@
 # Multi tenant strategy
 
-## Tenant ID
+## Silo Model
 
-`TenantID` => `dbname`
+- **Tenant ID**: `TenantID` => `dbname`
 
-## User ID
+- **User ID**: `UserID` => `collection_name`
 
-`UserID` => `collection_name`
+## Shared Model
+
+- **Tenant ID**:`TenantID` => `collection_name`
