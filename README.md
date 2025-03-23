@@ -78,6 +78,23 @@ config = {
 
 Read more examples at [here](https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/embedders)
 
+### Configure LLM
+
+```bash
+config = {
+    "llm": {
+        "provider": "anthropic",
+        "config": {
+            "model": "claude-3-7-sonnet-latest",
+            "temperature": 0.2,
+            "max_tokens": 32768,
+        }
+    }
+}
+```
+
+Read more at [here](https://github.com/mem0ai/mem0/blob/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/llms/config.mdx)
+
 ### Full configuration
 
 ```bash
@@ -101,6 +118,14 @@ config = {
         "config": {
             "model": "text-embedding-3-large",
             "embedding_dims": 1536
+        }
+    },
+    "llm": {
+        "provider": "anthropic",
+        "config": {
+            "model": "claude-3-7-sonnet-latest",
+            "temperature": 0.2,
+            "max_tokens": 32768,
         }
     }
 }
