@@ -1,4 +1,4 @@
-# OpenWorkspace-o1 CamelAI Integrated With Mem0 As Memory Layer
+# CamelAI Agents Integrated With Mem0 As Memory Layer
 
 A Python package that integrates Mem0's memory capabilities with CamelAI agents, providing a robust and persistent memory storage solution.
 
@@ -20,6 +20,8 @@ pip install openworkspace-o1-camel-mem0
 
 ## Usage
 
+### Configure vector store
+
 Here's a basic example of how to use the Mem0 storage with CamelAI:
 
 ```python
@@ -30,10 +32,15 @@ config = {
     "vector_store": {
         "provider": "pgvector",
         "config": {
+            "dbname": "postgres",
             "user": "test",
             "password": "123",
             "host": "127.0.0.1",
             "port": "5432",
+            "collection_name": "mem0",
+            "embedding_model_dims": 1536,
+            "diskann": True,
+            "hnsw": False
         }
     }
 }
@@ -52,6 +59,48 @@ storage.save(records)  # Save memory records
 records = storage.load()  # Load memory records
 storage.clear()  # Clear all memories
 ```
+
+Read more examples at [here](https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/vectordbs)
+
+### Configure embedder
+
+config = {
+    "embedder": {
+        "provider": "openai",
+        "config": {
+            "model": "text-embedding-3-large",
+            "embedding_dims": 1536
+        }
+    }
+}
+
+Read more examples at [here](https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/embedders)
+
+### Full configuration
+
+config = {
+    "vector_store": {
+        "provider": "pgvector",
+        "config": {
+            "dbname": "postgres",
+            "user": "test",
+            "password": "123",
+            "host": "127.0.0.1",
+            "port": "5432",
+            "collection_name": "mem0",
+            "embedding_model_dims": 1536,
+            "diskann": True,
+            "hnsw": False
+        }
+    },
+    "embedder": {
+        "provider": "openai",
+        "config": {
+            "model": "text-embedding-3-large",
+            "embedding_dims": 1536
+        }
+    }
+}
 
 ## Features
 
