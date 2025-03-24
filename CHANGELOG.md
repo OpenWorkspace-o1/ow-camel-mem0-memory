@@ -1,3 +1,9 @@
+## [2025-03-24] [PR#22](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/22)
+
+### Updated
+- Updated `mem0ai` dependency from version `0.1.74` to `0.1.75`.
+- Bumped project version from `0.0.3` to `0.0.4`.
+
 ## [2025-03-23] [PR#20](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/20)
 
 ### Updated
