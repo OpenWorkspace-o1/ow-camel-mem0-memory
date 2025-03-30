@@ -1,3 +1,12 @@
+## [2025-03-30] [PR#26](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/26)
+
+### Added
+- Added FAISS as a local mode vector store configuration in `README.md`.
+
+### Updated
+- Bumped project version from `0.0.5` to `0.0.6`.
+- Updated dependencies: `camel-ai` from `0.2.37` to `0.2.38`, `mem0ai` from `0.1.77` to `0.1.81`, and `sqlalchemy` from `2.0.39` to `2.0.40`.
+
 ## [2025-03-26] [PR#24](https://github.com/OpenWorkspace-o1/ow-camel-mem0-memory/pull/24)
 
 ### Updated
