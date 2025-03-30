@@ -60,6 +60,22 @@ records = storage.load()  # Load memory records
 storage.clear()  # Clear all memories
 ```
 
+Configure mem0 with FAISS (local mode)
+
+```bash
+config = {
+    "vector_store": {
+        "provider": "faiss",
+        "config": {
+            "collection_name": "my_collection_name",
+            "path": "db-vecs/path_to_your_faiss_index",
+            "distance_strategy": "euclidean",
+            "normalize_L2": True
+        }
+    }
+}
+```
+
 Read more examples at [here](https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/vectordbs)
 
 ### Configure embedder
