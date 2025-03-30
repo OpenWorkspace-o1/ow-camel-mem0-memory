@@ -1,15 +1,15 @@
 [project]
 name = "ow-camel-mem0-memory"
-version = "0.0.5"
+version = "0.0.6"
 description = "Mem0 memory layer for CamelAI Agents."
 authors = [{ name = "OpenWorkspace-o1" }]
 requires-python = ">=3.10,<3.13"
 readme = "README.md"
 license = "Apache-2.0"
 dependencies = [
-    "camel-ai>=0.2.37",
-    "mem0ai>=0.1.77",
-    "sqlalchemy==2.0.39",
+    "camel-ai>=0.2.38",
+    "mem0ai>=0.1.81",
+    "sqlalchemy==2.0.40",
     "psycopg2-binary==2.9.10"
 ]
 
