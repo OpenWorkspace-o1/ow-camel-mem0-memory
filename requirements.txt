@@ -1,5 +1,5 @@
-camel-ai>=0.2.38
+camel-ai>=0.2.41
 mem0ai>=0.1.81
-ruff==0.11.2
+ruff==0.11.4
 sqlalchemy==2.0.40
 psycopg2-binary==2.9.10
