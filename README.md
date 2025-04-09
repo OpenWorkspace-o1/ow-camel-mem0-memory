@@ -22,7 +22,9 @@ pip install ow-camel-mem0-memory
 
 ### Configure vector store
 
-Here's a basic example of how to use the Mem0 storage with CamelAI:
+#### With pgvector
+
+Here's a basic example of how to use the `Mem0` storage with `CamelAI`:
 
 ```python
 from ow-camel-mem0-memory import Mem0Storage
@@ -60,7 +62,9 @@ records = storage.load()  # Load memory records
 storage.clear()  # Clear all memories
 ```
 
-Configure mem0 with FAISS (local mode)
+#### With FAISS
+
+Configure `mem0` with `FAISS` (local mode)
 
 ```bash
 config = {
@@ -70,11 +74,28 @@ config = {
             "collection_name": "my_collection_name",
             "path": "db-vecs/path_to_your_faiss_index",
             "distance_strategy": "euclidean",
-            "normalize_L2": True
+            "normalize_L2": False
         }
     }
 }
 ```
+
+##### Distance Strategies
+
+`FAISS` in `mem0` supports three distance strategies:
+    - `euclidean`: L2 distance, suitable for most embedding models
+    - `inner_product`: Dot product similarity, useful for some specialized embeddings
+    - `cosine`: Cosine similarity, best for comparing semantic similarity regardless of vector magnitude
+
+When using `cosine` or `inner_product` with normalized vectors, you may want to set `normalize_L2=True` for better results.
+
+##### Performance Considerations
+
+`FAISS` offers several advantages for vector search:
+    - Efficiency: `FAISS` is optimized for memory usage and speed, making it suitable for large-scale applications.
+    - Offline Support: `FAISS` works entirely locally, with no need for external servers or API calls.
+    - Storage Options: Vectors can be stored in-memory for maximum speed or persisted to disk.
+    - Multiple Index Types: `FAISS` supports different index types optimized for various use cases (though `mem0` currently uses the basic flat index).
 
 Read more examples at [here](https://github.com/mem0ai/mem0/tree/04d7f2e48c8fc06b29f791f97052419c459f1c05/docs/components/vectordbs)
 
@@ -204,7 +225,7 @@ The main storage class that implements `BaseKeyValueStorage` from CamelAI.
 
 #### Constructor Parameters
 
-- `config_dict` (Dict[str, Any]): Mem0 configuration dictionary
+- `config_dict` (Dict[str, Any]): `Mem0` configuration dictionary
 - `agent_id` (str): Default agent ID for memory association
 - `user_id` (Optional[str]): Default user ID for memory association
 - `metadata` (Optional[Dict[str, Any]]): Default metadata for all memories
