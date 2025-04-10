@@ -74,7 +74,8 @@ config = {
             "collection_name": "my_collection_name",
             "path": "db-vecs/path_to_your_faiss_index",
             "distance_strategy": "euclidean",
-            "normalize_L2": False
+            "normalize_L2": False,
+            "embedding_model_dims": 1536,
         }
     }
 }
