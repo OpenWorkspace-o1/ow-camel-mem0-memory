@@ -1,4 +1,4 @@
-# CamelAI Agents Integrated With Mem0 As Memory Layer
+# [CamelAI](https://github.com/camel-ai/camel) Agents Integrated With [Mem0](https://github.com/mem0ai/mem0) As Memory Layer
 
 A Python package that integrates Mem0's memory capabilities with CamelAI agents, providing a robust and persistent memory storage solution.
 
